@@ -1,0 +1,562 @@
+[
+    {
+        "name": "CSE 141",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "EE 181",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "Math 141",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "Phy 141",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "Hum 141",
+        "credit": 2,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 100",
+        "credit": 0.75,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 142",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "EE 182",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "Phy 142",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 111",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 121",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 143",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "Math 143",
+        "credit": 4,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "Chem 141",
+        "credit": 3,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 122",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 144",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "Chem 142",
+        "credit": 0.75,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "Hum 144",
+        "credit": 1.5,
+        "price": 40,
+        "level": 1,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 241",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 245",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "EE 281",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "Math 241",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "Hum 243",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 242",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 246",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "EE 282",
+        "credit": 0.75,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "ME 246",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 223",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 243",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 251",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "EE 283",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "Math 243",
+        "credit": 3,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 224",
+        "credit": 0.75,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 244",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 252",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "EE 284",
+        "credit": 0.75,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 200",
+        "credit": 1.5,
+        "price": 40,
+        "level": 2,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 313",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 323",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 331",
+        "credit": 2,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 333",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 335",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 314",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 334",
+        "credit": 1.5,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 336",
+        "credit": 1.5,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 326",
+        "credit": 1.5,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 300",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 311",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 321",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 337",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 345",
+        "credit": 3,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 312",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 338",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 346",
+        "credit": 1.5,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 354",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 300",
+        "credit": 0.75,
+        "price": 40,
+        "level": 3,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 431",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 435",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 457",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": false
+    },
+    {
+        "name": "CSE 432",
+        "credit": 1.5,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 458",
+        "credit": 1,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 400",
+        "credit": 1,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 402",
+        "credit": 0.75,
+        "price": 40,
+        "level": 4,
+        "term": 1,
+        "sessional": true
+    },
+    {
+        "name": "CSE 423",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 433",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "Hum 445",
+        "credit": 2,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "Hum 447",
+        "credit": 2,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": false
+    },
+    {
+        "name": "CSE 424",
+        "credit": 1.5,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 434",
+        "credit": 0.75,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": true
+    },
+    {
+        "name": "CSE 400",
+        "credit": 3,
+        "price": 40,
+        "level": 4,
+        "term": 2,
+        "sessional": true
+    }
+]
