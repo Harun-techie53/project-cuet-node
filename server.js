@@ -26,7 +26,7 @@ app.use('/api/v1/registered-term', registeredTermRouter);
 // Database connection
 connectDB();
 
-const {PORT} = process.env;
+const PORT = process.env.PORT || 8080;
 
 //Initialize a serverInstance
     server.listen(PORT, () => {
