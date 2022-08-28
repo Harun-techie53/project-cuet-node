@@ -13,7 +13,7 @@ const researchSchema = new mongoose.Schema({
     slug: {
         type: String,
         required: [true, 'Slug is required'],
-        minlength: 200
+        // minlength: 200
     },
     thumbnail: {
         type: String,

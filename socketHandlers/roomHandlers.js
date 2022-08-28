@@ -6,9 +6,9 @@ exports.roomCreateHandler = (socket) => {
     const socketId = socket.id;
     const { id: userId } = socket.user;
 
-    const roomDetails = serverStore.addNewActiveRooms(socketId, userId);
-
+    // const roomDetails = serverStore.addNewActiveRooms(socketId, userId);
+    console.log('Check')
     socket.emit('room-create', {
-        roomDetails
+        message:'OK'
     });
 }

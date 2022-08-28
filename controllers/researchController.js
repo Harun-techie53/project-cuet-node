@@ -7,16 +7,28 @@ const {fromPath} = require('pdf2pic');
 
 const multerPdfStorage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public/pdfs');
+        cb(null, `public/pdfs`);
     },
     filename: (req, file, cb) => {
         const ext = file.mimetype.split('/')[1];
 
         // user-userId-currenttimestamp.ext
-        cb(null, `pdf-${v4()}-${Date.now()}.${ext}`);
+        cb(null, `user-${v4()}-${Date.now()}.${ext}`);
     }
 });
 
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        console.log(file)
+        cb(null, `public/pdfs`);
+    },
+    filename: (req, file, cb) => {
+        const ext = file.mimetype.split('/')[1];
+
+        // user-userId-currenttimestamp.ext
+        cb(null, `user-${v4()}-${Date.now()}.${ext}`);
+    }
+});
 const multerImageStorage = multer.memoryStorage();
 
 const multerImageFilter = (req, file, cb) => {
@@ -97,7 +109,7 @@ exports.getAllResearches = async (req, res) => {
             data: {
                 researches
             }
-        })
+        });
     } catch (err) {
         res.status(400).json({
             status: 'fail',
@@ -106,16 +118,33 @@ exports.getAllResearches = async (req, res) => {
     }
 }
 
-exports.getResearch = (req, res) => {
+exports.getResearch = async (req, res) => {
     try {
+        const research = await Research.findById(req.params.researchId);
         res.status(200).json({
             status: 'success',
             data: {
-                research: 'The specific research ID ' + req.params.researchId
+                research
             }
-        });;
+        });
     } catch (err) {
         res.status(400).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+}
+
+exports.getResearchesByUserId = async (req, res) => {
+    try {
+        const researches = await Research.find({ userId: req.user.id });
+
+        res.status(200).json({
+            status: "success",
+            researches
+        });
+    } catch (err) {
+        res.status(404).json({
             status: 'fail',
             message: err.message
         });
@@ -145,7 +174,7 @@ exports.createResearch = async (req, res) => {
         res.status(200).json({
             status: 'success',
             data: {
-                research: newResearch
+                research: {}
             }
         });
     } catch (err) {
@@ -186,3 +215,28 @@ exports.updateResearch = async (req, res) => {
         });
     }
 }
+
+
+// var upload = multer({storage: storage})
+
+
+// exports.uploadFiles = async(req,res,next) =>{
+//     // console.log(req.files)
+//     const files = req.files
+//     try{
+//         upload(req,res,function(err) {
+//             //console.log(req.body);
+//             //console.log(req.files);
+//             if(err) {
+//                 return res.end("Error uploading file.");
+//             }
+//             res.end("File is uploaded");
+//         });
+//     }catch(error){
+//         console.log(error)
+//         res.status(500).json({
+//             status:'fail',
+//             message:'Ineternal Server Error'
+//         })
+//     }
+// }

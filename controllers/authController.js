@@ -5,18 +5,6 @@ const sharp = require('sharp');
 const path = require('path');
 const {formattedEmailAndName} = require('../utils');
 
-// const multerStorage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//         cb(null, 'public/img/users');
-//     },
-//     filename: (req, file, cb) => {
-//         const ext = file.mimetype.split('/')[1];
-
-//         // user-userId-currenttimestamp.ext
-//         cb(null, `user-${req.user.id}-${Date.now()}.${ext}`);
-//     }
-// });
-
 const multerStorage = multer.memoryStorage();
 
 const multerFilter = (req, file, cb) => {
@@ -113,6 +101,24 @@ exports.getCurrentUser = async (req, res) => {
     }
 }
 
+exports.getUserById = async (req, res) => {
+    try {
+        const user = await User.findById(req.params.userId);
+
+        res.status(200).json({
+            status: 'success',
+            data: {
+                user
+            }
+        });
+    } catch (err) {
+        res.status(404).json({
+            status: 'fail',
+            message: err.message
+        });
+    }
+}
+
 exports.updateCurrentUser = async (req, res) => {
     try {
         //firstly format the email and name
@@ -182,6 +188,7 @@ exports.getAllUsers = async (req, res) => {
 
 exports.signUp = async (req, res) => {
     const {
+        name,
         email,
         password,
         passwordConfirm,
@@ -189,8 +196,8 @@ exports.signUp = async (req, res) => {
     } = req.body;
 
     try {
-        const name = formattedEmailAndName(email, req.body.name);
-        // Check to see whether email or username is unique or not
+        if(isTeacher === false) formattedEmailAndName(email);
+        //Check to see whether email or username is unique or not
         let newUser = await User.findOne({ email });
         let newUser2 = await User.findOne({ name });
         if(newUser || newUser2) throw new Error('User is already exist!');

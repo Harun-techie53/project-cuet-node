@@ -9,13 +9,15 @@ const {
     deleteCurrentUser,
     uploadUserPhoto,
     resizeUserPhoto,
-    getUserPhoto
+    getUserPhoto,
+    getUserById
 } = require('../controllers/authController');
 const { protectRoute } = require('../middlewares/authMiddleware');
 
 router.post('/signIn', signIn);
 router.post('/signUp', signUp);
 router.get('/users', protectRoute, getAllUsers);
+router.get('/users/:userId', getUserById);
 router.get('/me', protectRoute, getCurrentUser);
 router.get('/fetchUserPhoto/:file', protectRoute, getUserPhoto);
 router.patch(

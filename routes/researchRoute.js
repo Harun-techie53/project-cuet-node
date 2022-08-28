@@ -8,7 +8,9 @@ const {
     uploadPdfThumbnail,
     resizePdfThumbnail,
     uploadPdfFile,
-    getPdfFile
+    getPdfFile,
+    getResearchesByUserId
+    // uploadFiles
 } = require('../controllers/researchController');
 const { protectRoute } = require('../middlewares/authMiddleware');
 
@@ -18,8 +20,21 @@ router
     .post(
         protectRoute,
         uploadPdfFile, 
+        uploadPdfThumbnail,
         createResearch
     );
+
+router.route('/user').get(protectRoute, getResearchesByUserId);
+
+    
+// router
+// .route('/')
+// .get(getAllResearches)
+// .post(
+//     protectRoute,
+//     uploadFiles,
+//     createResearch
+// );
 
 router
     .route('/:researchId')

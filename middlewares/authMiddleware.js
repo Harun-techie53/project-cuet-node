@@ -25,7 +25,7 @@ exports.protectRoute = async (req, res, next) => {
         })
     }
     // If the user does not exist after the token is issued
-    const freshUser = await User.findById(decoded.id);
+    const freshUser = await User.findById(decoded?.id);
 
     if(!freshUser) throw res.status(404).json({
         status: 'fail',

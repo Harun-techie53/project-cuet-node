@@ -20,7 +20,8 @@ const registerSocketServer = (server) => {
     });
 
     io.on('room-create', (socket) => {
-        roomHandlers.roomCreateHandler(socket);
+        console.log('Run')
+        // roomHandlers.roomCreateHandler(socket);
     });
 }
 

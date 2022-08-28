@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer')
 require('dotenv').config();
 const connectDB = require('./config/db');
 const app = express();
@@ -10,11 +11,15 @@ const researchRouter = require('./routes/researchRoute');
 const registeredTermRouter = require('./routes/registeredTermRoute');
 const registerSocketServer = require('./socketServer');
 const path = require('path');
+var upload = multer();
+app.use( express.static( path.join( __dirname, 'public' ) ) );
 
 //configure socket server
-registerSocketServer(server);
 
-app.use(express.json());
+registerSocketServer(server);
+app.use(express.json()) // for json
+app.use(express.urlencoded({ extended: true }))
+app.use(upload.any())
 app.use(cors());
 
 // Routes defined
@@ -29,6 +34,6 @@ connectDB();
 const PORT = process.env.PORT || 8080;
 
 //Initialize a serverInstance
-    server.listen(PORT, () => {
-        console.log(`App is running on port ${PORT}...`);
-    });
+server.listen(PORT, () => {
+    console.log(`App is running on port ${PORT}...`);
+});
