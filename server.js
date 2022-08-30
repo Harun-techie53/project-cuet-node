@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const multer = require('multer')
+const multer = require('multer');
 require('dotenv').config();
 const connectDB = require('./config/db');
 const app = express();
@@ -14,13 +14,18 @@ const path = require('path');
 var upload = multer();
 app.use( express.static( path.join( __dirname, 'public' ) ) );
 
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+
 //configure socket server
 
 registerSocketServer(server);
 app.use(express.json()) // for json
 app.use(express.urlencoded({ extended: true }))
-app.use(upload.any())
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Routes defined
 app.use('/api/v1/auth', authRouter);

@@ -20,7 +20,7 @@ const researchSchema = new mongoose.Schema({
         // required: [true, 'Thumbnail image is required']
     },
     pdf: {
-        type: [String],
+        type: String,
         // required: [true, 'A PDF is required']
     },
     description: {

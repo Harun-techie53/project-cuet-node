@@ -5,9 +5,8 @@ const {
     createResearch,
     getResearch,
     updateResearch,
-    uploadPdfThumbnail,
-    resizePdfThumbnail,
-    uploadPdfFile,
+    // uploadPdfThumbnail,
+    // uploadPdfFile,
     getPdfFile,
     getResearchesByUserId
     // uploadFiles
@@ -19,8 +18,6 @@ router
     .get(getAllResearches)
     .post(
         protectRoute,
-        uploadPdfFile, 
-        uploadPdfThumbnail,
         createResearch
     );
 
@@ -43,7 +40,7 @@ router
         protectRoute, 
         // uploadPdfThumbnail, 
         // resizePdfThumbnail,
-        uploadPdfFile,
+        // uploadPdfFile,
         updateResearch
     );
 router.route('/:researchId/pdf-files').get(getPdfFile);

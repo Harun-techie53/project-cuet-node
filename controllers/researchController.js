@@ -5,61 +5,61 @@ const sharp = require('sharp');
 const {v4} = require('uuid');
 const {fromPath} = require('pdf2pic');
 
-const multerPdfStorage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, `public/pdfs`);
-    },
-    filename: (req, file, cb) => {
-        const ext = file.mimetype.split('/')[1];
+// const multerPdfStorage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         cb(null, `public/pdfs`);
+//     },
+//     filename: (req, file, cb) => {
+//         const ext = file.mimetype.split('/')[1];
 
-        // user-userId-currenttimestamp.ext
-        cb(null, `user-${v4()}-${Date.now()}.${ext}`);
-    }
-});
+//         // user-userId-currenttimestamp.ext
+//         cb(null, `user-${v4()}-${Date.now()}.${ext}`);
+//     }
+// });
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        console.log(file)
-        cb(null, `public/pdfs`);
-    },
-    filename: (req, file, cb) => {
-        const ext = file.mimetype.split('/')[1];
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//         console.log(file)
+//         cb(null, `public/pdfs`);
+//     },
+//     filename: (req, file, cb) => {
+//         const ext = file.mimetype.split('/')[1];
 
-        // user-userId-currenttimestamp.ext
-        cb(null, `user-${v4()}-${Date.now()}.${ext}`);
-    }
-});
-const multerImageStorage = multer.memoryStorage();
+//         // user-userId-currenttimestamp.ext
+//         cb(null, `user-${v4()}-${Date.now()}.${ext}`);
+//     }
+// });
+// const multerImageStorage = multer.memoryStorage();
 
-const multerImageFilter = (req, file, cb) => {
-    if(file.mimetype.startsWith('image')) {
-        cb(null, true);
-    } else {
-        cb(new Error('Forbidden extension!'), false);
-    }
-}
+// const multerImageFilter = (req, file, cb) => {
+//     if(file.mimetype.startsWith('image')) {
+//         cb(null, true);
+//     } else {
+//         cb(new Error('Forbidden extension!'), false);
+//     }
+// }
 
-const multerPdfFilter = (req, file, cb) => {
-    if(file.mimetype.startsWith('application')) {
-        cb(null, true);
-    } else {
-        cb(new Error('Forbidden extension!'), false);
-    }
-}
+// const multerPdfFilter = (req, file, cb) => {
+//     if(file.mimetype.startsWith('application')) {
+//         cb(null, true);
+//     } else {
+//         cb(new Error('Forbidden extension!'), false);
+//     }
+// }
 
-const uploadImage = multer({
-    storage: multerImageStorage,
-    fileFilter: multerImageFilter
-});
+// const uploadImage = multer({
+//     storage: multerImageStorage,
+//     fileFilter: multerImageFilter
+// });
 
-const uploadPdf = multer({
-    storage: multerPdfStorage,
-    fileFilter: multerPdfFilter
-});
+// const uploadPdf = multer({
+//     storage: multerPdfStorage,
+//     fileFilter: multerPdfFilter
+// });
 
-exports.uploadPdfFile = uploadPdf.array('pdf', 5);
+// exports.uploadPdfFile = uploadPdf.array('pdf', 5);
 
-exports.uploadPdfThumbnail = uploadImage.single('thumbnail');
+// exports.uploadPdfThumbnail = uploadImage.single('thumbnail');
 
 exports.resizePdfThumbnail = (req, res, next) => {
     const mimetype = req.file.mimetype.split('/')[0];
@@ -155,18 +155,16 @@ exports.createResearch = async (req, res) => {
     const {
         title,
         slug,
-        description
+        description,
+        pdf
     } = req.body;
-    const uploadedFiles = [];
-
-    req.files.forEach((file) => uploadedFiles.unshift(file.filename));
     try {
         const newResearch = new Research({
             userId: req.user.id,
             title,
             slug,
             description,
-            pdf: uploadedFiles
+            pdf
         });
 
         await newResearch.save();
