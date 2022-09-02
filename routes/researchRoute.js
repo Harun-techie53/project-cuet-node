@@ -8,7 +8,8 @@ const {
     // uploadPdfThumbnail,
     // uploadPdfFile,
     getPdfFile,
-    getResearchesByUserId
+    getResearchesByUserId,
+    deleteResearch
     // uploadFiles
 } = require('../controllers/researchController');
 const { protectRoute } = require('../middlewares/authMiddleware');
@@ -42,7 +43,12 @@ router
         // resizePdfThumbnail,
         // uploadPdfFile,
         updateResearch
+    )
+    .delete(
+        protectRoute,
+        deleteResearch
     );
+    
 router.route('/:researchId/pdf-files').get(getPdfFile);
 
 module.exports = router;
